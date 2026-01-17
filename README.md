@@ -1,50 +1,62 @@
-# Welcome to your Expo app 👋
+# what2wear (Native iOS)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**what2wear** is an AI-powered outfit recommendation app for iOS, built with **Swift** and **SwiftUI**.
 
-## Get started
+## 🚀 Getting Started
 
-1. Install dependencies
+This project contains the source code for the native iOS application. The files are located in the `swift_src` directory.
 
-   ```bash
-   npm install
-   ```
+### Prerequisites
+- Xcode 15+
+- iOS 17+ SDK
 
-2. Start the app
+### Installation
 
-   ```bash
-   npx expo start
-   ```
+1.  **Create a new Xcode Project**:
+    - Open Xcode.
+    - Select **Create New Project** > **iOS** > **App**.
+    - Product Name: `what2wear`.
+    - Interface: **SwiftUI**.
+    - Language: **Swift**.
 
-In the output, you'll find options to open the app in a
+2.  **Import Source Files**:
+    Delete the default `ContentView.swift` and `what2wearApp.swift` in your new project. Drag and drop the contents of the `swift_src` folder into your Xcode project navigator:
+    
+    - `what2wearApp.swift` (Entry point)
+    - `ContentView.swift` (Main Dashboard)
+    - `DesignSystem/` (Colors and Theme)
+    - `Components/` (UI Components)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+3.  **Run the App**:
+    - Select an iOS Simulator (e.g., iPhone 15/16 Pro).
+    - Press **Cmd + R** to build and run.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 📱 Features & UI
 
-## Get a fresh project
+- **Premium Light Theme**: Custom `Color` palette in `DesignSystem/Colors.swift`.
+- **Dashboard**:
+    - **DateSelector**: Top bar with date and event context.
+    - **SwipeDeck**: Interactive "Tinder-style" card stack for outfit recommendations.
+    - **BottomNavBar**: Custom navigation bar with a floating "Add" action button.
 
-When you're ready, run:
+## 📂 Project Structure
 
-```bash
-npm run reset-project
+```
+what2wear/
+├── swift_src/
+│   ├── what2wearApp.swift       # App Entry
+│   ├── ContentView.swift        # Dashboard Screen
+│   ├── DesignSystem/
+│   │   └── Colors.swift         # Color Theme Definitions
+│   └── Components/
+│       ├── DateSelector.swift   # Top Date/Event Pill
+│       ├── SwipeDeck.swift      # Card Stack Logic
+│       ├── OutfitCard.swift     # Individual Card View
+│       └── BottomNavBar.swift   # Custom Tab Bar
+└── ... (Backup files)
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 🛠 Tech Stack
+- **Language**: Swift 5.10+
+- **Framework**: SwiftUI
+- **Target**: iOS 17.0+
