@@ -1,0 +1,11 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/_global-error/page.js")
+R.c("server/chunks/ssr/[root-of-the-server]__65df6e02._.js")
+R.c("server/chunks/ssr/Desktop_what2wear_fe08c720._.js")
+R.c("server/chunks/ssr/7fdee_next_dist_44b7375a._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__6d601678._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__56072a6c._.js")
+R.c("server/chunks/ssr/7fdee_next_dist_d6327ca2._.js")
+R.c("server/chunks/ssr/Desktop_what2wear_app_a2ca7191._.js")
+R.c("server/chunks/ssr/Desktop_what2wear__next-internal_server_app__global-error_page_actions_ab776e5f.js")
+R.m(21803)
+module.exports=R.m(21803).exports

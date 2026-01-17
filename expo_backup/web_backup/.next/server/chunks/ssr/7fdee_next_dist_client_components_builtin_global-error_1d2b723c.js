@@ -1,0 +1,3 @@
+module.exports=[77880,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(25559);a.n(d("[project]/Desktop/what2wear/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},85545,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(25559);a.n(d("[project]/Desktop/what2wear/node_modules/next/dist/client/components/builtin/global-error.js"))},9510,a=>{"use strict";a.i(77880);var b=a.i(85545);a.n(b)}];
+
+//# sourceMappingURL=7fdee_next_dist_client_components_builtin_global-error_1d2b723c.js.map
