@@ -18,11 +18,9 @@ struct EditAvatarView: View {
                 ScrollView(showsIndicators: false) {
                     VStack(spacing: 32) {
 
-                        // ── Selfie preview ─────────────────────────────────────
                         selfiePreview
                             .padding(.top, 40)
 
-                        // ── Feature hint ───────────────────────────────────────
                         VStack(spacing: 4) {
                             Text("Your face & hair will be placed on your avatar")
                                 .font(.subheadline)
@@ -35,20 +33,17 @@ struct EditAvatarView: View {
                         }
                         .padding(.horizontal, 32)
 
-                        // ── Upload buttons ─────────────────────────────────────
                         VStack(spacing: 12) {
                             takeSelfieButton
                             uploadPictureButton
                         }
                         .padding(.horizontal, 24)
 
-                        // ── Generate (only visible once a selfie is selected) ──
                         if viewModel.selfieImage != nil {
                             generateButton
                                 .padding(.horizontal, 24)
                         }
 
-                        // ── Error banner ────────────────────────────────────────
                         if let error = viewModel.errorMessage {
                             errorBanner(message: error)
                                 .padding(.horizontal, 24)
@@ -58,7 +53,6 @@ struct EditAvatarView: View {
                     }
                 }
 
-                // Loading overlay sits above everything while generating
                 if viewModel.isGenerating {
                     LoadingOverlay()
                 }
@@ -81,6 +75,14 @@ struct EditAvatarView: View {
                 CameraPicker(image: $viewModel.selfieImage)
                     .ignoresSafeArea()
             }
+            .fullScreenCover(isPresented: $viewModel.showPreview) {
+                AvatarPreviewView(viewModel: viewModel)
+            }
+            .onChange(of: viewModel.showPreview) { showing in
+                if !showing && viewModel.generatedAvatarImage != nil && viewModel.errorMessage == nil && !viewModel.isSaving {
+                    dismiss()
+                }
+            }
         }
     }
 
@@ -88,8 +90,6 @@ struct EditAvatarView: View {
 
     private var selfiePreview: some View {
         ZStack(alignment: .topTrailing) {
-
-            // Circle image / placeholder
             Group {
                 if let selfie = viewModel.selfieImage {
                     Image(uiImage: selfie)
@@ -110,7 +110,6 @@ struct EditAvatarView: View {
             }
             .overlay(Circle().stroke(Color(.separator), lineWidth: 1))
 
-            // Dismiss-selfie button
             if viewModel.selfieImage != nil {
                 Button {
                     viewModel.clearSelfie()
@@ -132,7 +131,6 @@ struct EditAvatarView: View {
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 showCamera = true
             } else {
-                // Simulator fallback
                 showPhotoLibrary = true
             }
         } label: {
@@ -168,14 +166,7 @@ struct EditAvatarView: View {
 
     private var generateButton: some View {
         Button {
-            Task {
-                await viewModel.generateAvatar()
-                // Auto-dismiss only if generation succeeded
-                if viewModel.errorMessage == nil,
-                   viewModel.generatedAvatarImage != nil {
-                    dismiss()
-                }
-            }
+            Task { await viewModel.generateAvatar() }
         } label: {
             HStack(spacing: 10) {
                 Image(systemName: "wand.and.stars")

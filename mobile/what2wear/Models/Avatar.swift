@@ -1,22 +1,14 @@
 import Foundation
 
-/// Represents one generated avatar.
+/// The user's generated avatar stored in Firebase.
 struct Avatar: Codable {
-    let id: UUID
-    /// The remote Replicate output URL (expires after ~24 h — kept for reference only).
-    let remoteURL: String
-    /// Absolute path to the JPEG saved in the app's Documents directory.
-    let localPath: String
+    var transparentUrl: String     // Firebase Storage URL — PNG with transparent background
+    var whiteUrl: String           // Firebase Storage URL — PNG with white background (for VTON)
     let createdAt: Date
 
-    init(remoteURL: String, localPath: String) {
-        self.id        = UUID()
-        self.remoteURL = remoteURL
-        self.localPath = localPath
-        self.createdAt = Date()
-    }
-
-    var localFileURL: URL {
-        URL(fileURLWithPath: localPath)
+    init(transparentUrl: String, whiteUrl: String, createdAt: Date = Date()) {
+        self.transparentUrl = transparentUrl
+        self.whiteUrl = whiteUrl
+        self.createdAt = createdAt
     }
 }
