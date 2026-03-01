@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Sheet for adding a clothing item: capture photo -> auto-classify -> confirm/edit -> save.
+/// Sheet for adding a clothing item: capture photo → auto-classify → confirm/edit → save.
 struct AddClothingView: View {
 
     @ObservedObject var viewModel: ClosetViewModel
@@ -9,12 +9,13 @@ struct AddClothingView: View {
     @State private var showPhotoLibrary = false
     @State private var showCamera       = false
 
-    // Editable classification
-    @State private var selectedCategory: ClothingCategory = .top
+    // Editable classification (initialized from auto-detection)
+    @State private var selectedCategory: ClothingCategory = .other
     @State private var selectedColor: ClothingColor = ClothingColor.palette[0]
-    @State private var material: String = ""
-    @State private var tags: [String] = []
-    @State private var tagInput: String = ""
+    @State private var notes: String = ""
+
+    @State private var showCategoryPicker = false
+    @State private var showColorPicker    = false
 
     var body: some View {
         NavigationView {
@@ -23,12 +24,16 @@ struct AddClothingView: View {
 
                 ScrollView(showsIndicators: false) {
                     VStack(spacing: 28) {
+
                         if let image = viewModel.capturedImage {
+                            // ── Classification results ───────────────
                             classificationView(image: image)
                         } else {
+                            // ── Capture buttons ──────────────────────
                             captureSection
                         }
 
+                        // ── Error banner ─────────────────────────
                         if let error = viewModel.errorMessage {
                             errorBanner(message: error)
                                 .padding(.horizontal, 24)
@@ -38,7 +43,7 @@ struct AddClothingView: View {
                     }
                 }
 
-                if viewModel.isClassifying || viewModel.isSaving {
+                if viewModel.isClassifying {
                     LoadingOverlay()
                 }
             }
@@ -77,12 +82,6 @@ struct AddClothingView: View {
             .onChange(of: viewModel.detectedColor.name) { _ in
                 selectedColor = viewModel.detectedColor
             }
-            .onChange(of: viewModel.detectedMaterial) { newValue in
-                material = newValue
-            }
-            .onChange(of: viewModel.detectedTags) { newValue in
-                tags = newValue
-            }
         }
     }
 
@@ -90,6 +89,7 @@ struct AddClothingView: View {
 
     private var captureSection: some View {
         VStack(spacing: 32) {
+            // Placeholder
             VStack(spacing: 12) {
                 Image(systemName: "camera.viewfinder")
                     .font(.system(size: 64, weight: .light))
@@ -103,6 +103,7 @@ struct AddClothingView: View {
             }
             .padding(.top, 60)
 
+            // Buttons
             VStack(spacing: 12) {
                 Button {
                     if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -158,9 +159,7 @@ struct AddClothingView: View {
                 .overlay(alignment: .topTrailing) {
                     Button {
                         viewModel.resetAddFlow()
-                        material = ""
-                        tags = []
-                        tagInput = ""
+                        notes = ""
                     } label: {
                         Image(systemName: "xmark.circle.fill")
                             .font(.system(size: 26))
@@ -226,6 +225,7 @@ struct AddClothingView: View {
                                             Circle()
                                                 .stroke(Color(.separator), lineWidth: 0.5)
                                         )
+
                                     Text(color.name)
                                         .font(.system(size: 9))
                                         .foregroundColor(selectedColor.name == color.name ? .primary : .secondary)
@@ -237,80 +237,23 @@ struct AddClothingView: View {
                 }
             }
 
-            // Material
+            // Notes
             VStack(alignment: .leading, spacing: 8) {
-                Text("Material")
+                Text("Notes (optional)")
                     .font(.caption)
                     .fontWeight(.medium)
                     .foregroundColor(.secondary)
 
-                TextField("e.g. Cotton, Denim, Silk", text: $material)
+                TextField("e.g. Summer favorite, work outfit", text: $notes)
                     .textFieldStyle(.roundedBorder)
                     .font(.subheadline)
             }
             .padding(.horizontal, 24)
 
-            // Tags
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Tags")
-                    .font(.caption)
-                    .fontWeight(.medium)
-                    .foregroundColor(.secondary)
-
-                // Tag chips
-                if !tags.isEmpty {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 6) {
-                            ForEach(tags, id: \.self) { tag in
-                                HStack(spacing: 4) {
-                                    Text(tag)
-                                        .font(.caption)
-                                    Button {
-                                        tags.removeAll { $0 == tag }
-                                    } label: {
-                                        Image(systemName: "xmark")
-                                            .font(.system(size: 8, weight: .bold))
-                                    }
-                                }
-                                .padding(.horizontal, 10)
-                                .padding(.vertical, 6)
-                                .background(Color(.secondarySystemBackground))
-                                .foregroundColor(.primary)
-                                .clipShape(Capsule())
-                            }
-                        }
-                    }
-                }
-
-                HStack(spacing: 8) {
-                    TextField("Add tag", text: $tagInput)
-                        .textFieldStyle(.roundedBorder)
-                        .font(.subheadline)
-                        .onSubmit {
-                            addTag()
-                        }
-                    Button("Add") {
-                        addTag()
-                    }
-                    .font(.subheadline.weight(.medium))
-                    .disabled(tagInput.trimmingCharacters(in: .whitespaces).isEmpty)
-                }
-            }
-            .padding(.horizontal, 24)
-
             // Save button
             Button {
-                Task {
-                    await viewModel.saveItem(
-                        category: selectedCategory,
-                        color: selectedColor,
-                        material: material,
-                        tags: tags
-                    )
-                    if viewModel.errorMessage == nil {
-                        dismiss()
-                    }
-                }
+                viewModel.saveItem(category: selectedCategory, color: selectedColor, notes: notes)
+                dismiss()
             } label: {
                 HStack(spacing: 10) {
                     Image(systemName: "checkmark")
@@ -325,13 +268,6 @@ struct AddClothingView: View {
             }
             .padding(.horizontal, 24)
         }
-    }
-
-    private func addTag() {
-        let trimmed = tagInput.trimmingCharacters(in: .whitespaces)
-        guard !trimmed.isEmpty, !tags.contains(trimmed) else { return }
-        tags.append(trimmed)
-        tagInput = ""
     }
 
     // MARK: - Error banner

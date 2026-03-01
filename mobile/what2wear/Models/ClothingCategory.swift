@@ -1,24 +1,42 @@
 import Foundation
 
 enum ClothingCategory: String, Codable, CaseIterable, Identifiable {
-    case top       = "Top"
-    case bottom    = "Bottom"
-    case shoes     = "Shoes"
-    case dress     = "Dress"
-    case outerwear = "Outerwear"
+    // Tops
+    case tshirt     = "T-Shirt"
+    case blouse     = "Blouse"
+    case shirt      = "Shirt"
+    case sweater    = "Sweater"
+    case hoodie     = "Hoodie"
+    case jacket     = "Jacket"
+    case coat       = "Coat"
+    case cardigan   = "Cardigan"
+    case tankTop    = "Tank Top"
+
+    // Bottoms
+    case jeans      = "Jeans"
+    case shorts     = "Shorts"
+    case skirt      = "Skirt"
+    case sportPants = "Sport Pants"
+    case trousers   = "Trousers"
+
+    // Full body
+    case dress      = "Dress"
+    case jumpsuit   = "Jumpsuit"
+
+    // Other
+    case other      = "Other"
 
     var id: String { rawValue }
 
-    var symbolName: String {
-        switch self {
-        case .top:       return "tshirt.fill"
-        case .bottom:    return "figure.walk"
-        case .shoes:     return "shoe.fill"
-        case .dress:     return "figure.dress.line.vertical.figure"
-        case .outerwear: return "cloud.snow.fill"
-        }
+    static var tops: [ClothingCategory] {
+        [.tshirt, .blouse, .shirt, .sweater, .hoodie, .jacket, .coat, .cardigan, .tankTop]
     }
 
-    /// Categories that form a complete outfit on their own.
-    static var fullBody: [ClothingCategory] { [.dress] }
+    static var bottoms: [ClothingCategory] {
+        [.jeans, .shorts, .skirt, .sportPants, .trousers]
+    }
+
+    static var fullBody: [ClothingCategory] {
+        [.dress, .jumpsuit]
+    }
 }

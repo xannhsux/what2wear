@@ -5,7 +5,6 @@ struct ClosetView: View {
 
     @StateObject private var viewModel = ClosetViewModel()
     @State private var showAddItem = false
-    @State private var selectedItem: ClothingItem?
 
     private let columns = [
         GridItem(.flexible(), spacing: 12),
@@ -22,22 +21,25 @@ struct ClosetView: View {
                 } else {
                     ScrollView(showsIndicators: false) {
                         VStack(alignment: .leading, spacing: 16) {
+                            // Filter chips
                             filterBar
                                 .padding(.top, 8)
 
+                            // Grid
                             LazyVGrid(columns: columns, spacing: 16) {
                                 ForEach(viewModel.filteredItems) { item in
-                                    ClothingItemCard(item: item)
-                                        .onTapGesture {
-                                            selectedItem = item
+                                    ClothingItemCard(
+                                        image: viewModel.loadImage(for: item),
+                                        category: item.category,
+                                        colorHex: item.colorHex
+                                    )
+                                    .contextMenu {
+                                        Button(role: .destructive) {
+                                            viewModel.deleteItem(id: item.id)
+                                        } label: {
+                                            Label("Delete", systemImage: "trash")
                                         }
-                                        .contextMenu {
-                                            Button(role: .destructive) {
-                                                Task { await viewModel.deleteItem(id: item.id) }
-                                            } label: {
-                                                Label("Delete", systemImage: "trash")
-                                            }
-                                        }
+                                    }
                                 }
                             }
                             .padding(.horizontal, 16)
@@ -59,9 +61,6 @@ struct ClosetView: View {
             }
             .sheet(isPresented: $showAddItem) {
                 AddClothingView(viewModel: viewModel)
-            }
-            .sheet(item: $selectedItem) { item in
-                ClothingDetailView(viewModel: viewModel, item: item)
             }
         }
     }

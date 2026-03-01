@@ -9,9 +9,6 @@ enum APIError: LocalizedError {
     case generationFailed(String)
     case timeout
     case networkUnavailable
-    case firebaseError(String)
-    case notAuthenticated
-    case itemNotFound
 
     var errorDescription: String? {
         switch self {
@@ -32,12 +29,6 @@ enum APIError: LocalizedError {
             return "The request timed out after 6 minutes. Check your network and try again."
         case .networkUnavailable:
             return "No internet connection. Check your Wi-Fi or cellular and try again."
-        case .firebaseError(let message):
-            return "Firebase error: \(message)"
-        case .notAuthenticated:
-            return "Not signed in. Please restart the app."
-        case .itemNotFound:
-            return "The requested item was not found."
         }
     }
 }

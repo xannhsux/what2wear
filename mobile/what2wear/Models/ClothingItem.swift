@@ -1,32 +1,27 @@
 import Foundation
 
 struct ClothingItem: Codable, Identifiable {
-    let id: String
-    var category: ClothingCategory
-    var colorName: String
-    var colorHex: String
-    var imageUrl: String          // Firebase Storage download URL
-    var material: String
-    var tags: [String]
-    let addedAt: Date
+    let id: UUID
+    let category: ClothingCategory
+    let colorName: String
+    let colorHex: String
+    let imagePath: String   // relative path within Documents/closet/
+    let dateAdded: Date
+    var notes: String?
 
     init(
-        id: String = UUID().uuidString,
         category: ClothingCategory,
         colorName: String,
         colorHex: String,
-        imageUrl: String = "",
-        material: String = "",
-        tags: [String] = [],
-        addedAt: Date = Date()
+        imagePath: String,
+        notes: String? = nil
     ) {
-        self.id = id
+        self.id = UUID()
         self.category = category
         self.colorName = colorName
         self.colorHex = colorHex
-        self.imageUrl = imageUrl
-        self.material = material
-        self.tags = tags
-        self.addedAt = addedAt
+        self.imagePath = imagePath
+        self.dateAdded = Date()
+        self.notes = notes
     }
 }

@@ -3,15 +3,14 @@ import Foundation
 enum Constants {
 
     // MARK: - WaveSpeed AI API
+    // Get your key at: https://wavespeed.ai/accesskey
+    // WARNING: Don't commit Secrets.swift with a real key — it's gitignored
     static let waveSpeedAPIKey  = Secrets.waveSpeedAPIKey
     static let waveSpeedBaseURL = "https://api.wavespeed.ai/api/v3"
 
-    // MARK: - Firebase paths
-    enum Firebase {
-        static let usersCollection = "users"
-        static let closetSubcollection = "closet"
-        static let outfitsSubcollection = "outfits"
-        static let avatarField = "avatar"
+    // MARK: - Persistence keys
+    enum Storage {
+        static let avatarURL = "userAvatarURL"
     }
 
     // MARK: - Image settings
@@ -24,12 +23,5 @@ enum Constants {
     enum Polling {
         static let intervalNanoseconds: UInt64 = 3_000_000_000  // 3 s
         static let maxAttempts = 120                             // ~6 min max
-    }
-
-    // MARK: - Outfit recommendation
-    enum Recommendation {
-        static let maxOutfits = 5
-        static let minClosetItems = 6
-        static let maxNonNeutralColors = 3
     }
 }
