@@ -20,18 +20,13 @@
 		5F9F7CF12F1C214F00FCA7B1 /* OutfitCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F7CEC2F1C214F00FCA7B1 /* OutfitCard.swift */; };
 		5F9F7CF22F1C214F00FCA7B1 /* SwipeDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F7CED2F1C214F00FCA7B1 /* SwipeDeck.swift */; };
 		5F9F7CF52F1C215600FCA7B1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F7CF32F1C215600FCA7B1 /* Colors.swift */; };
-		5FBA02482F4CFCE900CD389F /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FBA02472F4CFCE900CD389F /* avatar.png */; };
-		5FE1843E2F4CFF8100275FAA /* EditAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE1842F2F4CFF8100275FAA /* EditAvatarView.swift */; };
-		5FE1843F2F4CFF8100275FAA /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE184302F4CFF8100275FAA /* LoadingOverlay.swift */; };
-		5FE184402F4CFF8100275FAA /* MyAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE184312F4CFF8100275FAA /* MyAvatarView.swift */; };
-		5FE184412F4CFF8100275FAA /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE184332F4CFF8100275FAA /* APIError.swift */; };
-		5FE184422F4CFF8100275FAA /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE184342F4CFF8100275FAA /* Avatar.swift */; };
-		5FE184432F4CFF8100275FAA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE184362F4CFF8100275FAA /* Constants.swift */; };
-		5FE184442F4CFF8100275FAA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE184372F4CFF8100275FAA /* ImagePicker.swift */; };
 		5FA00001AABB00110000AAAA /* WaveSpeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA00002AABB00110000AAAA /* WaveSpeedService.swift */; };
 		5FA00003AABB00110000AAAA /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA00004AABB00110000AAAA /* Secrets.swift */; };
-		5FE184462F4CFF8100275FAA /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE1843A2F4CFF8100275FAA /* StorageService.swift */; };
-		5FE184472F4CFF8100275FAA /* AvatarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE1843C2F4CFF8100275FAA /* AvatarViewModel.swift */; };
+		5FA89E712F580AC6005AA145 /* SupabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA89E702F580AC6005AA145 /* SupabaseService.swift */; };
+		5FA89E732F580AD4005AA145 /* DailyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA89E722F580AD4005AA145 /* DailyViewModel.swift */; };
+		5FA89E752F580B04005AA145 /* Outfit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA89E742F580B04005AA145 /* Outfit.swift */; };
+		5FA89E772F580B0C005AA145 /* SupabaseWardrobeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA89E762F580B0C005AA145 /* SupabaseWardrobeItem.swift */; };
+		5FBA02482F4CFCE900CD389F /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5FBA02472F4CFCE900CD389F /* avatar.png */; };
 		5FC10001CCDD00110000AA01 /* ClothingCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC10002CCDD00110000AA01 /* ClothingCategory.swift */; };
 		5FC10003CCDD00110000AA02 /* ClothingColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC10004CCDD00110000AA02 /* ClothingColor.swift */; };
 		5FC10005CCDD00110000AA03 /* ClothingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC10006CCDD00110000AA03 /* ClothingItem.swift */; };
@@ -41,6 +36,15 @@
 		5FC1000DCCDD00110000AA07 /* ClothingItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC1000ECCDD00110000AA07 /* ClothingItemCard.swift */; };
 		5FC1000FCCDD00110000AA08 /* AddClothingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC10010CCDD00110000AA08 /* AddClothingView.swift */; };
 		5FC10011CCDD00110000AA09 /* ClosetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC10012CCDD00110000AA09 /* ClosetView.swift */; };
+		5FE1843E2F4CFF8100275FAA /* EditAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE1842F2F4CFF8100275FAA /* EditAvatarView.swift */; };
+		5FE1843F2F4CFF8100275FAA /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE184302F4CFF8100275FAA /* LoadingOverlay.swift */; };
+		5FE184402F4CFF8100275FAA /* MyAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE184312F4CFF8100275FAA /* MyAvatarView.swift */; };
+		5FE184412F4CFF8100275FAA /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE184332F4CFF8100275FAA /* APIError.swift */; };
+		5FE184422F4CFF8100275FAA /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE184342F4CFF8100275FAA /* Avatar.swift */; };
+		5FE184432F4CFF8100275FAA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE184362F4CFF8100275FAA /* Constants.swift */; };
+		5FE184442F4CFF8100275FAA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE184372F4CFF8100275FAA /* ImagePicker.swift */; };
+		5FE184462F4CFF8100275FAA /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE1843A2F4CFF8100275FAA /* StorageService.swift */; };
+		5FE184472F4CFF8100275FAA /* AvatarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE1843C2F4CFF8100275FAA /* AvatarViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,18 +81,13 @@
 		5F9F7CEC2F1C214F00FCA7B1 /* OutfitCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutfitCard.swift; sourceTree = "<group>"; };
 		5F9F7CED2F1C214F00FCA7B1 /* SwipeDeck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDeck.swift; sourceTree = "<group>"; };
 		5F9F7CF32F1C215600FCA7B1 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		5FBA02472F4CFCE900CD389F /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
-		5FE1842F2F4CFF8100275FAA /* EditAvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAvatarView.swift; sourceTree = "<group>"; };
-		5FE184302F4CFF8100275FAA /* LoadingOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
-		5FE184312F4CFF8100275FAA /* MyAvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAvatarView.swift; sourceTree = "<group>"; };
-		5FE184332F4CFF8100275FAA /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		5FE184342F4CFF8100275FAA /* Avatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
-		5FE184362F4CFF8100275FAA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		5FE184372F4CFF8100275FAA /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		5FA00002AABB00110000AAAA /* WaveSpeedService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveSpeedService.swift; sourceTree = "<group>"; };
 		5FA00004AABB00110000AAAA /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
-		5FE1843A2F4CFF8100275FAA /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
-		5FE1843C2F4CFF8100275FAA /* AvatarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarViewModel.swift; sourceTree = "<group>"; };
+		5FA89E702F580AC6005AA145 /* SupabaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupabaseService.swift; sourceTree = "<group>"; };
+		5FA89E722F580AD4005AA145 /* DailyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyViewModel.swift; sourceTree = "<group>"; };
+		5FA89E742F580B04005AA145 /* Outfit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Outfit.swift; sourceTree = "<group>"; };
+		5FA89E762F580B0C005AA145 /* SupabaseWardrobeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupabaseWardrobeItem.swift; sourceTree = "<group>"; };
+		5FBA02472F4CFCE900CD389F /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
 		5FC10002CCDD00110000AA01 /* ClothingCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingCategory.swift; sourceTree = "<group>"; };
 		5FC10004CCDD00110000AA02 /* ClothingColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingColor.swift; sourceTree = "<group>"; };
 		5FC10006CCDD00110000AA03 /* ClothingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingItem.swift; sourceTree = "<group>"; };
@@ -98,6 +97,15 @@
 		5FC1000ECCDD00110000AA07 /* ClothingItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingItemCard.swift; sourceTree = "<group>"; };
 		5FC10010CCDD00110000AA08 /* AddClothingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClothingView.swift; sourceTree = "<group>"; };
 		5FC10012CCDD00110000AA09 /* ClosetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetView.swift; sourceTree = "<group>"; };
+		5FE1842F2F4CFF8100275FAA /* EditAvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAvatarView.swift; sourceTree = "<group>"; };
+		5FE184302F4CFF8100275FAA /* LoadingOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
+		5FE184312F4CFF8100275FAA /* MyAvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAvatarView.swift; sourceTree = "<group>"; };
+		5FE184332F4CFF8100275FAA /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		5FE184342F4CFF8100275FAA /* Avatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
+		5FE184362F4CFF8100275FAA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5FE184372F4CFF8100275FAA /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		5FE1843A2F4CFF8100275FAA /* StorageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		5FE1843C2F4CFF8100275FAA /* AvatarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +233,8 @@
 		5FE184352F4CFF8100275FAA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5FA89E762F580B0C005AA145 /* SupabaseWardrobeItem.swift */,
+				5FA89E742F580B04005AA145 /* Outfit.swift */,
 				5FE184332F4CFF8100275FAA /* APIError.swift */,
 				5FE184342F4CFF8100275FAA /* Avatar.swift */,
 				5FC10002CCDD00110000AA01 /* ClothingCategory.swift */,
@@ -247,6 +257,7 @@
 		5FE1843B2F4CFF8100275FAA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5FA89E702F580AC6005AA145 /* SupabaseService.swift */,
 				5FA00002AABB00110000AAAA /* WaveSpeedService.swift */,
 				5FE1843A2F4CFF8100275FAA /* StorageService.swift */,
 				5FC10008CCDD00110000AA04 /* ClosetStorageService.swift */,
@@ -258,6 +269,7 @@
 		5FE1843D2F4CFF8100275FAA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				5FA89E722F580AD4005AA145 /* DailyViewModel.swift */,
 				5FE1843C2F4CFF8100275FAA /* AvatarViewModel.swift */,
 				5FC1000CCCDD00110000AA06 /* ClosetViewModel.swift */,
 			);
@@ -343,7 +355,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5F9F7CB62F1C204800FCA7B1 /* Build configuration list for PBXProject "what2wear" */;
+			buildConfigurationList = 5F9F7CB62F1C204800FCA7B1 /* Build configuration list for PBXProject "What2Wear" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -406,8 +418,10 @@
 				5F9F7CF02F1C214F00FCA7B1 /* DateSelector.swift in Sources */,
 				5FE184422F4CFF8100275FAA /* Avatar.swift in Sources */,
 				5F9F7CF12F1C214F00FCA7B1 /* OutfitCard.swift in Sources */,
+				5FA89E752F580B04005AA145 /* Outfit.swift in Sources */,
 				5FE1843E2F4CFF8100275FAA /* EditAvatarView.swift in Sources */,
 				5FA00001AABB00110000AAAA /* WaveSpeedService.swift in Sources */,
+				5FA89E772F580B0C005AA145 /* SupabaseWardrobeItem.swift in Sources */,
 				5FA00003AABB00110000AAAA /* Secrets.swift in Sources */,
 				5FE184462F4CFF8100275FAA /* StorageService.swift in Sources */,
 				5FE184432F4CFF8100275FAA /* Constants.swift in Sources */,
@@ -417,9 +431,11 @@
 				5FC10001CCDD00110000AA01 /* ClothingCategory.swift in Sources */,
 				5FC10003CCDD00110000AA02 /* ClothingColor.swift in Sources */,
 				5FC10005CCDD00110000AA03 /* ClothingItem.swift in Sources */,
+				5FA89E712F580AC6005AA145 /* SupabaseService.swift in Sources */,
 				5FC10007CCDD00110000AA04 /* ClosetStorageService.swift in Sources */,
 				5FC10009CCDD00110000AA05 /* ClothingClassifierService.swift in Sources */,
 				5FC1000BCCDD00110000AA06 /* ClosetViewModel.swift in Sources */,
+				5FA89E732F580AD4005AA145 /* DailyViewModel.swift in Sources */,
 				5FC1000DCCDD00110000AA07 /* ClothingItemCard.swift in Sources */,
 				5FC1000FCCDD00110000AA08 /* AddClothingView.swift in Sources */,
 				5FC10011CCDD00110000AA09 /* ClosetView.swift in Sources */,
@@ -589,11 +605,11 @@
 				DEVELOPMENT_TEAM = U9ZSGNQ2V7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "What2Wear needs camera access to take selfies for avatar creation";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "What2Wear needs photo library access to select photos for avatar creation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "What2Wear needs camera access to take selfies for avatar creation";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "What2Wear needs photo library access to select photos for avatar creation";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -620,11 +636,11 @@
 				DEVELOPMENT_TEAM = U9ZSGNQ2V7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "What2Wear needs camera access to take selfies for avatar creation";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "What2Wear needs photo library access to select photos for avatar creation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "What2Wear needs camera access to take selfies for avatar creation";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "What2Wear needs photo library access to select photos for avatar creation";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -719,7 +735,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5F9F7CB62F1C204800FCA7B1 /* Build configuration list for PBXProject "what2wear" */ = {
+		5F9F7CB62F1C204800FCA7B1 /* Build configuration list for PBXProject "What2Wear" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F9F7CDF2F1C204900FCA7B1 /* Debug */,

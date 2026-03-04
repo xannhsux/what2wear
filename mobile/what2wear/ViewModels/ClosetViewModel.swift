@@ -62,7 +62,7 @@ final class ClosetViewModel: ObservableObject {
 
     // MARK: - Save
 
-    func saveItem(category: ClothingCategory, color: ClothingColor, notes: String?) {
+    func saveItem(category: ClothingCategory, color: ClothingColor, notes: String?) async {
         guard let image = capturedImage else { return }
 
         let id = UUID()
@@ -78,8 +78,21 @@ final class ClosetViewModel: ObservableObject {
             imagePath: path,
             notes: notes?.isEmpty == true ? nil : notes
         )
+        
+        // 1. Save locally
         storage.addItem(item)
         items.insert(item, at: 0)
+        
+        // 2. Sync with Supabase (Background / Non-blocking)
+        let userId = UUID() // Replace with real auth user id
+        do {
+            try await SupabaseService.shared.uploadWardrobeItem(item, image: image, userId: userId)
+            print("[ClosetViewModel] Successfully synced with Supabase.")
+        } catch {
+            print("[ClosetViewModel] Supabase sync failed: \(error.localizedDescription)")
+            // Optionally, show a toast or alert if needed
+        }
+        
         resetAddFlow()
     }
 

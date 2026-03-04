@@ -252,8 +252,10 @@ struct AddClothingView: View {
 
             // Save button
             Button {
-                viewModel.saveItem(category: selectedCategory, color: selectedColor, notes: notes)
-                dismiss()
+                Task {
+                    await viewModel.saveItem(category: selectedCategory, color: selectedColor, notes: notes)
+                    dismiss()
+                }
             } label: {
                 HStack(spacing: 10) {
                     Image(systemName: "checkmark")

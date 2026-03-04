@@ -9,6 +9,8 @@ enum APIError: LocalizedError {
     case generationFailed(String)
     case timeout
     case networkUnavailable
+    case invalidData
+    case supabaseError(String)
 
     var errorDescription: String? {
         switch self {
@@ -29,6 +31,10 @@ enum APIError: LocalizedError {
             return "The request timed out after 6 minutes. Check your network and try again."
         case .networkUnavailable:
             return "No internet connection. Check your Wi-Fi or cellular and try again."
+        case .invalidData:
+            return "The data or image format is invalid. Please try another file."
+        case .supabaseError(let detail):
+            return "Supabase error: \(detail)"
         }
     }
 }
